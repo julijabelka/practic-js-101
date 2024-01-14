@@ -38,10 +38,34 @@ console.log(`${hours}:${minutes}`);*/
 
 // Наступна функція має повертати true, якщо параметр age більше чи дорівнює 18.
 
-const age = prompt("Enter your age");
+// const age = prompt("Enter your age");
 
-function isAdult(age) {
-  return parseInt(age) >= 18;
-}
+// function isAdult(age) {
+//   return parseInt(age) >= 18;
+// }
 
-console.log(isAdult(age));
+// console.log(isAdult(age));
+
+
+// Напишіть функцію min(a, b), яка повертає
+// меньше з чисел a, b
+
+// function min(a, b) {
+//   return Math.min(a, b);
+// }
+// console.log(min(10, 20));
+
+// Введи значення в prompt і перевір чи є воно числом
+
+// const answer = Number(prompt("Enter value"));
+// console.log(`${answer} - ${!Number.isNaN(answer)}`);
+
+// Оголоси функцію favoriteLanguage, яка буде повертати повідомлення
+// "I love <language>! I have been studying it for <years> years."
+// де language і years - це параметри, які очікує функція, мова (рядок)
+// і роки (число).
+
+// function favoriteLanguage (language, years) {
+//   return `I love ${language}! I have been studying it for ${years} years.`;
+// }
+// console.log(favoriteLanguage("English", 5));
