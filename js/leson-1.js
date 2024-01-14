@@ -38,10 +38,13 @@ console.log(`${hours}:${minutes}`);*/
 
 // Наступна функція має повертати true, якщо параметр age більше чи дорівнює 18.
 
-// const age = prompt("Enter your age");
+//  const age = prompt("Enter your age");
 
 // function isAdult(age) {
-//   return parseInt(age) >= 18;
+//     if (age<18) {
+//         return confirm("Are you adult?")
+//     } else {return parseInt(age) >= 18;}
+// //   return parseInt(age) >= 18;
 // }
 
 // console.log(isAdult(age));
@@ -51,8 +54,13 @@ console.log(`${hours}:${minutes}`);*/
 // меньше з чисел a, b
 
 // function min(a, b) {
+//     const checkA = Number(a)
+//     if (Number.isNaN(checkA)){
+//         return "not a number"
+//     }
 //   return Math.min(a, b);
 // }
+// console.log(min("qwwerty" , 1))
 // console.log(min(10, 20));
 
 // Введи значення в prompt і перевір чи є воно числом
@@ -69,3 +77,55 @@ console.log(`${hours}:${minutes}`);*/
 //   return `I love ${language}! I have been studying it for ${years} years.`;
 // }
 // console.log(favoriteLanguage("English", 5));
+
+// Запитай користувача про його ім'я та прізвище,
+// а потім виведb вітання, об'єднуючи ці дані в один рядок.
+
+// const userName = prompt("What is your name")
+// const userSurname = prompt("What is your surname")
+// alert(`Hello ${userName} ${userSurname}`)
+
+
+// Запитуй у користувача число в prompt.
+// Створи функцію, яка буде приймати це число і возводити його в його ж ступінь
+// Функція має повертати рядок "<число> в ступені <число> дорівнює <число возведено в ступінь>"
+
+// const number = prompt("Enter number")
+// function numberInDegree(number) {
+//     // const number2 = number ** number
+//     const number2 = Math.pow(number, number)
+//     return `${number} в ступені ${number} дорівнює ${number2}`
+// }
+// console.log(numberInDegree(number))
+
+// Який результат буде виведено в консоль?
+// console.log(typeof typeof 1);
+
+// Що відобразиться в консолі:
+// console.log(Number(undefined));
+
+// console.log("10" - 8 + true);
+// console.log(5 + 5 + "5");
+
+// const a = 10;
+// function check() {
+//     const a = 20;
+//   console.log(a);
+// }
+// check();
+
+
+//Використовуя функцію if...else,
+//напишіть код, який буде питати:
+//"Яка офіційна назва JavaScript?"
+//Якщо користувач вводить "ECMAScript",
+//то показати через alert: "Вірно!"
+//в противному випадку відобразити:"Не знаєте? ECMAScript!"
+
+// const userAnswer = prompt("Яка офіційна назва JavaScript?")
+// if(userAnswer==="ECMAScript"){
+//     alert("Вірно!")
+// }
+// else{
+//     alert("Не знаєте? ECMAScript!")
+// }
