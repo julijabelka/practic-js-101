@@ -168,7 +168,6 @@
 // }
 // logItems(styles);
 
-
 // Напишіть if..else, що відповідає наступному switch:
 
 // const browser = prompt("Enter your browser");
@@ -203,7 +202,6 @@
 //     alert("We hope that this page looks ok!");
 // }
 
-
 // Напиши функцію, яка перебирає масив логінів і перевіряє
 // чи є ім'я введене в інпут у цьому масиві і у разі,
 // якщо є - виводить повідомлення "Доступ дозволено"
@@ -234,7 +232,6 @@
 // }
 
 // checkLogin(logins);
-
 
 // В змінній minuteValue є число від 0 до 59.
 // Визначте до якої чверті години входить
@@ -280,7 +277,6 @@
 //     return newArray;
 // }
 // console.log(checkFalse(array));
-
 
 //Напишіть функції для роботи з масивом
 //add(name) додає ім'я до кінця колекції
@@ -330,3 +326,29 @@
 // console.log(isPalindrome("Abba"), true);
 // console.log(isPalindrome("hello"), false));
 
+//Напишіть функцію caclculateAverage()
+//яка приймає довільну кількість
+//аргументів і повертає їхнє середнє значення.
+//Додати перевірку, що аргументи це числа.
+
+function caclculateAverage() {
+  // const args = arguments;
+  let sum = 0;
+  let count = 0;
+
+  for (const arg of arguments) {
+    if (typeof arg === "number") {
+      sum += arg;
+      count++;
+    }
+  }
+
+  if (count === 0) {
+    return 0;
+  }
+
+  return sum / count;
+}
+
+console.log(caclculateAverage(1, 2, 3, 4, 5));
+console.log(caclculateAverage());
