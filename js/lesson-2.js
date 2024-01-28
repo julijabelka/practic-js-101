@@ -282,3 +282,51 @@
 // console.log(checkFalse(array));
 
 
+//Напишіть функції для роботи з масивом
+//add(name) додає ім'я до кінця колекції
+//remove(name) видаляє ім'я із колекції
+//update(oldName, newName) змінює ім'я на нове
+
+// const names = ["Alla", "Petro", "Max", "Olena", "Boris"];
+// function add(name){
+//     if(names.includes(name)){
+//         return `${name}- вже існує`;
+//     }
+//     names.push(name)
+//     return names;
+// }
+// console.log(add("Petro"));
+// console.log(add("Sveta"));
+
+// function remove(name) {
+// const index = names.indexOf(name);
+// if(index === -1){
+//     return `${name}- не знайдено`;
+// }
+// names.splice(index, 1);
+// return names;
+// }
+// console.log(remove("Petro"));
+// console.log(remove("Petro"));
+
+// function update(oldName, newName){
+//     const index = names.indexOf(oldName);
+//     if(index === -1){
+//         return `${oldName}- не знайдено`;
+//     }
+//     // names.splice(index, 1, newName);
+//     names[index] = newName;
+//     return names;
+// }
+// console.log(update("Max", "olena"));
+// console.log(update("Max", "olena"));
+
+// Напишіть функцію, яка перевіряє, чи є
+// рядок (без урахування регістра) паліндромом.
+// Паліндром — це слово, число, фраза або інша
+// послідовність символів, яка читається як
+// в обратному, так і в прямому напрямку, наприклад,
+// madam або racecar
+// console.log(isPalindrome("Abba"), true);
+// console.log(isPalindrome("hello"), false));
+
