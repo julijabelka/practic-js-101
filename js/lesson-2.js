@@ -195,7 +195,7 @@
 //     alert("You've got the Edge!");
 // } else if (browser === "Chrome" || browser === "Firefox" || browser === "Safari" || browser === "Opera") {
 //     alert("Okay we support these browsers too");
-// } 
+// }
 // else if (browser === "" || browser === null) {
 //     alert("Enter something for check");
 // }
@@ -234,4 +234,51 @@
 // }
 
 // checkLogin(logins);
+
+
+// В змінній minuteValue є число від 0 до 59.
+// Визначте до якої чверті години входить
+// це число(в першу, другу, треттю чи четверту).
+
+// const minuteValue = Math.floor(Math.random() * (59 - 0) + 0);
+// if (minuteValue <= 15) {
+//     console.log(`${minuteValue} - 1 чверть`)
+// } else if (minuteValue <= 30) {
+//    console.log(`${minuteValue} - 2 чверть`)
+// } else if (minuteValue <= 45) {
+//     console.log(`${minuteValue} - 3 чверть`)
+// } else {
+//     console.log(`${minuteValue} - 4 чверть`)
+// }
+
+// Написати ф-цію, яка прибиратиме з масиву всі значення, які перетворюються на false
+// undefined, null, false, '', 0, NaN
+
+// const array = [
+//   1,
+//   0,
+//   54,
+//   "doc",
+//   null,
+//   "jpg",
+//   undefined,
+//   "",
+//   "png",
+//   "exe",
+//   false,
+//   "mp4",
+//   NaN,
+//   "hbs",
+// ];
+// function checkFalse(array) {
+//     const newArray = [];
+//     for (const element of array) {
+//         if (element) {
+//             newArray.push(element);
+//         }
+//     }
+//     return newArray;
+// }
+// console.log(checkFalse(array));
+
 
