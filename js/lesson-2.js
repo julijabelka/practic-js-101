@@ -167,3 +167,71 @@
 //   }
 // }
 // logItems(styles);
+
+
+// Напишіть if..else, що відповідає наступному switch:
+
+// const browser = prompt("Enter your browser");
+
+// switch (browser) {
+//   case "Edge":
+//     alert("You've got the Edge!");
+//     break;
+
+//   case "Chrome":
+//   case "Firefox":
+//   case "Safari":
+//   case "Opera":
+//     alert("Okay we support these browsers too");
+//     break;
+
+//   default:
+//     alert("We hope that this page looks ok!");
+// }
+
+// const browser = prompt("Enter your browser");
+
+// if (browser === "Edge") {
+//     alert("You've got the Edge!");
+// } else if (browser === "Chrome" || browser === "Firefox" || browser === "Safari" || browser === "Opera") {
+//     alert("Okay we support these browsers too");
+// } 
+// else if (browser === "" || browser === null) {
+//     alert("Enter something for check");
+// }
+// else {
+//     alert("We hope that this page looks ok!");
+// }
+
+
+// Напиши функцію, яка перебирає масив логінів і перевіряє
+// чи є ім'я введене в інпут у цьому масиві і у разі,
+// якщо є - виводить повідомлення "Доступ дозволено"
+// в іншому випадку - "Користувач не знайден"
+
+// const logins = ["Peter", "John", "Igor", "Sasha"];
+
+// function checkLogin(array) {
+
+//     const login = prompt("Enter your login");
+
+//     // if (array.includes(login)) {
+//     //     alert("Доступ дозволено");
+//     // } else {
+//     //     alert("Користувач не знайден");
+//     //  }
+
+//     for (const element of array) {
+
+//         if (element === login) {
+//             return alert("Доступ дозволено");
+//         }
+
+//     }
+
+//     alert("Користувач не знайден");
+
+// }
+
+// checkLogin(logins);
+
