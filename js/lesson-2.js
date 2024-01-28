@@ -66,3 +66,64 @@
 // }
 
 // console.log(calculateSumOfEvenNumbers(1, 10));
+
+// Змінна num може набувати 4 значення: 1, 2, 3 або 4. Якщо вона має
+// значення '1', то у змінну result запишемо 'зима', якщо має значення
+// '2' - 'весна' і так далі. Розв'яжіть завдання через switch-case.
+
+// const num = parseInt(prompt("Enter Number:"));
+// let result = "";
+// switch (num) {
+//   case 1:
+//     result = "зима";
+//     break;
+//   case 2:
+//     result = "весна";
+//     break;
+//   case 3:
+//     result = "лето";
+//     break;
+//   case 4:
+//     result = "осень";
+//     break;
+//   default:
+//     result = "Должно быть число от 1 до 4";
+// }
+
+// console.log(result);
+
+// const checkSeason = function (num) {
+//   let result = "";
+//   switch (num) {
+//     case 1:
+//       result = "зима";
+//       break;
+//     case 2:
+//       result = "весна";
+//       break;
+//     case 3:
+//       result = "лето";
+//       break;
+//     case 4:
+//       result = "осень";
+//       break;
+//     default:
+//       result = "Должно быть число от 1 до 4";
+//   }
+//   return result;
+// };
+
+// console.log(checkSeason(5));
+
+// напиши функцію яка сумуватиме сусідні числа і пушити в новий масив
+const someArr = [22, 11, 34, 5, 12, 13, 14, 15];
+
+const sumNumbers = function (array) {
+  const newArray = [];
+  for (let index = 0; index < array.length - 1; index++) {
+    newArray.push(array[index] + array[index + 1]);
+  }
+  return newArray;
+};
+
+console.log(sumNumbers(someArr));
