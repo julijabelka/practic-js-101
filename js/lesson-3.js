@@ -234,59 +234,123 @@
 // delete(name) - видаляє контакт з заданим ім'ям;
 // updateName(oldName, newName) - зиінює ім'я контакта;
 
-const phonebook = {
-  contacts: [],
-    add(data) {
-        const newData = {
-            category: 'default',
-            ...data,
-            id: this.generateId(),
-            createdAt: this.getDate(),
-        };
-        this.contacts.push(newData);
-  },
-    list() {
-        console.table(this.contacts);
-  },
-    filtered(category) {
-  const filteredContacts = this.contacts.filter(contact => contact.category == category);
-     if(filteredContacts.length === 0){
-         return 'Do not found';
-        } 
-        return filteredContacts;  
-  },
-    delete(name) {
-        this.contacts = this.contacts.filter(contact => contact.name !== name);
-  },
-    updateName(oldName, newName) {
-        const contact = this.contacts.find(contact => contact.name === oldName)
-        if (contact) {
-            contact.name = newName;
-        }
-     },
-  generateId() {
-    return "#" + Math.random().toString(36).substr(2, 9);
-  },
-  getDate() {
-    return Date.now();
-  },
-};
+// const phonebook = {
+//   contacts: [],
+//     add(data) {
+//         const newData = {
+//             category: 'default',
+//             ...data,
+//             id: this.generateId(),
+//             createdAt: this.getDate(),
+//         };
+//         this.contacts.push(newData);
+//   },
+//     list() {
+//         console.table(this.contacts);
+//   },
+//     filtered(category) {
+//   const filteredContacts = this.contacts.filter(contact => contact.category == category);
+//      if(filteredContacts.length === 0){
+//          return 'Do not found';
+//         } 
+//         return filteredContacts;  
+//   },
+//     delete(name) {
+//         this.contacts = this.contacts.filter(contact => contact.name !== name);
+//   },
+//     updateName(oldName, newName) {
+//         const contact = this.contacts.find(contact => contact.name === oldName)
+//         if (contact) {
+//             contact.name = newName;
+//         }
+//      },
+//   generateId() {
+//     return "#" + Math.random().toString(36).substr(2, 9);
+//   },
+//   getDate() {
+//     return Date.now();
+//   },
+// };
 
-phonebook.add({
-  name: "Mango",
-  email: "mango@mail.com",
-  category: "friends",
-});
+// phonebook.add({
+//   name: "Mango",
+//   email: "mango@mail.com",
+//   category: "friends",
+// });
 
-phonebook.add({
-  name: "Poly",
-  email: "poly@hotmail.com",
-});
-phonebook.add({
-  name: "Katy",
-  email: "katy@hotmail.com",
-  category: "friends",
-});
+// phonebook.add({
+//   name: "Poly",
+//   email: "poly@hotmail.com",
+// });
+// phonebook.add({
+//   name: "Katy",
+//   email: "katy@hotmail.com",
+//   category: "friends",
+// });
 
-phonebook.list();
-console.log(phonebook.filtered('friends'));
+// phonebook.list();
+// console.log(phonebook.filtered('friends'));
+
+// Є масив чисел, наприклад: arr = [1,2,3,4,5]
+// Напишіть функцію getSums(arr), яка повертає масив його часткових сум.
+// Іншими словами, виклик getSums(arr) має повертати новий масив з такої ж
+// кількості елементів, в якому на кожній позиції буде сума елементів масива
+// до цієї позиції включно
+
+// Наприклад: для arr = [1,2,3,4,5]
+// getSums( arr ) = [ 1, 1+2, 1+2+3, 1+2+3+4, 1+2+3+4+5 ] = [ 1, 3, 6, 10, 15 ]
+// Функція не має змінювати вхідний масив
+// Використовуйте метод reduce
+
+// function getSums(arr){
+//     return arr.reduce((acc, curr, index) => {
+//         if(index === 0) {
+//             acc.push(curr);
+//         } else {
+//             acc.push(curr + acc[index - 1])
+//         }
+//         return acc;
+//     }, [])
+// }
+// console.log(getSums([1,2,3,4,5]));
+
+//Призначити знижку 20% на фрукти в масиві,
+//Присвоїти ID для кожного продукту (використовуючи індекс елемента)
+
+// const fruits = [
+//   { name: "apple", price: 200 },
+//   { name: "orange", price: 300 },
+//   { name: "grapes", price: 750 },
+// ];
+
+// fruits.forEach((fruit, index) => {
+//     fruit.id = index + 1;
+//     fruit.price *= 0.8;
+// })
+
+// const discount = fruits.map((fruit, index) =>({
+//     ...fruit,
+//     id: index + 1,
+//     price: fruit.price * 0.8
+// }));
+
+// console.log(discount);
+
+// Reverse. Напишіть функцію, яка розгортає масив у зворотному порядку.
+// Будь ласка, не використовуйте array.reverse(), щоб зробити завдання цікавішим.
+
+const data = [10, 20, 30, 40, 50, 60];
+const alphData = ["a", "b", "c", "d", "e"];
+
+function reverseArray(arr) {
+    // const result = [];
+    // for(let i = arr.length - 1; i>=0; i--){
+    //     result.push(arr[i]);
+    // }
+    // return result;
+
+    return arr.reduce((acc, curr) => [curr, ...acc], [])
+}
+
+console.log(reverseArray(data));
+console.log(reverseArray(alphData));
