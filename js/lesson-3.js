@@ -66,9 +66,7 @@
 
 // console.log(statistic);
 
-
 // ================================================
-
 
 //4. Створіть об'єкт calculator з трьомя методами
 //read(a, b) - приймає два аргумента і зберігає їх
@@ -77,20 +75,20 @@
 //mult() перемножає збереженні значення і повертає результат (з перевіркою на наявніст властивостей в об'єкті)
 
 // const calculator = {
-//   read(a, b) { 
+//   read(a, b) {
 //     this.valueA = a;
 //     this.valueB = b;
 //   },
 // sum(){
 //   if(this.valueA && this.valueB) {
 //     return this.valueA + this.valueB
-//   } 
+//   }
 //   return `Not found`
 // },
 // mult() {
 //   if(this.valueA && this.valueB) {
 //     return this.valueA * this.valueB
-//   } 
+//   }
 //   return `Not found`
 // },
 // };
@@ -98,10 +96,7 @@
 // console.log(calculator.sum());
 // console.log(calculator.mult());
 
-
-
 // ==================================================
-
 
 /// Даний словник із міст та дат виступів рок-групи
 /// Необхідно перетворити словник (key-value) на масив із назв міст
@@ -122,7 +117,102 @@
 //  const keys = Object.keys(object);
 //  return keys.filter(city => object[city] > new Date()).toSorted((a, b) => object[a] - object[b]);
 
- 
-
 // }
 // console.log(sortedConcerts(concerts));
+
+//----------------------------------------
+//task-3
+
+//5. Напишіть скрипт керування особистим кабінетом інтернет банка
+//Є об'єкт account в якому необхідно реалізувати
+//методи для работи з балансом та історією транзакцій
+
+//Типів транзакцій всього два.
+//Можна покласти або зняти гроші з рахунка
+// const Transaction = {
+//   DEPOSIT: "deposit",
+//   WITHDRAW: "withdraw",
+// };
+
+// //Кожна транзакція це об'єкт з властивостями id, type, amount
+
+// const account = {
+//   //поточний баланс рахунка
+//   balance: 0,
+
+//   //Історія транзакцій
+//   transactions: [],
+
+//   //Метод створює і повертає об'єкт транзакцій
+//   //Приймає сумму і тип транзакцій
+//   createTransaction(type, amount) {
+//     return {
+//       type,
+//       amount,
+//     };
+//   },
+//   //Метод відповідає за додавання сумми к балансу.
+//   //Приймає сумму транзакціи.
+//   //Визиває createTransaction для створення об'єкта транзакціи
+//   //після чого додає його в історію транзакцій
+//   deposit(amount) {
+//     this.balance += amount;
+//     const transaction = this.createTransaction(Transaction.DEPOSIT, amount);
+//     // transaction.id = Math.random();
+//     // this.transactions.push(transaction);
+//     this.transactions.push({
+//       ...transaction,
+//       id: this.transactions.length + 1,
+//     });
+//   },
+
+//   //Метод відповідає за зняття сумми з балансу.
+//   //Приймає сумму транзакціи.
+//   //Визиває createTransaction для створення об'єкта транзакціи
+//   //після чого додає йогого в історю транзакцій
+//   //Якщо amount більше ніж поточний баланс, виводимо повідомлення про те,
+//   //що недостатньо коштів на рахунку
+//   withdraw(amount) {
+//     if (this.balance < amount) {
+//       console.log("Не достатньо грошей на рахунку");
+//       return;
+//     }
+//     this.balance -= amount;
+//     const transaction = this.createTransaction(Transaction.WITHDRAW, amount);
+//     this.transactions.push({
+//       ...transaction,
+//       id: this.transactions.length + 1,
+//     });
+//   },
+
+//   //Метод повертає поточний баланс
+//   getBalance() {
+//     return `Поточний баланс ${this.balance} $`;
+//   },
+
+//   //Метод шукає і повертає об'єкт транзакціи по id
+//   getTransactionDetails(id) {
+//     return (
+//       this.transactions.find((transaction) => transaction.id === id) ||
+//       "Не знайдено"
+//     );
+//   },
+
+//   //Метод повертає кількіств коштів вказаного типу
+//   //транзакціи зі всієї історії транзакцій
+//   getTransactionType(type) {
+//     return this.transactions
+//       .filter((transaction) => transaction.type === type)
+//       .reduce((total, transaction) => total + transaction.amount, 0);
+//   },
+// };
+// console.log(account.deposit(1000));
+// console.log(account.deposit(2000));
+// console.log(account.deposit(13));
+// console.log(account.deposit(50));
+// console.log(account.withdraw(50));
+// console.log(account.withdraw(510));
+// console.log(account.withdraw(5050));
+// console.log(account.getBalance());
+// console.log(account.getTransactionDetails(3));
+// console.log(account.getTransactionType(Transaction.DEPOSIT));
