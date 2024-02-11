@@ -216,3 +216,77 @@
 // console.log(account.getBalance());
 // console.log(account.getTransactionDetails(3));
 // console.log(account.getTransactionType(Transaction.DEPOSIT));
+
+
+// 6. Створіть телефонну книгу - об'єкт phonebook,
+// у якого є властивість contacts (список контактів)
+// та методи управління книгою:
+// add(data) - приймає об'єкт data, де зберігається
+// name, email, category, id, createdAt
+// (name i email - обов'язкові параметри, які треба передавати
+// при додаванні нового контакта,
+// category - може передаватись чи ні, якщо ні - має
+// приймати значення "default",
+// id та createdAt генеруються відповідними методами:
+// generateId() і getDate());
+// list() - повертає список контактів у вигляді таблиці;
+// filtered(category) - фільтрує контактів по обраній категорії (друзі, робота і т.д.)
+// delete(name) - видаляє контакт з заданим ім'ям;
+// updateName(oldName, newName) - зиінює ім'я контакта;
+
+const phonebook = {
+  contacts: [],
+    add(data) {
+        const newData = {
+            category: 'default',
+            ...data,
+            id: this.generateId(),
+            createdAt: this.getDate(),
+        };
+        this.contacts.push(newData);
+  },
+    list() {
+        console.table(this.contacts);
+  },
+    filtered(category) {
+  const filteredContacts = this.contacts.filter(contact => contact.category == category);
+     if(filteredContacts.length === 0){
+         return 'Do not found';
+        } 
+        return filteredContacts;  
+  },
+    delete(name) {
+        this.contacts = this.contacts.filter(contact => contact.name !== name);
+  },
+    updateName(oldName, newName) {
+        const contact = this.contacts.find(contact => contact.name === oldName)
+        if (contact) {
+            contact.name = newName;
+        }
+     },
+  generateId() {
+    return "#" + Math.random().toString(36).substr(2, 9);
+  },
+  getDate() {
+    return Date.now();
+  },
+};
+
+phonebook.add({
+  name: "Mango",
+  email: "mango@mail.com",
+  category: "friends",
+});
+
+phonebook.add({
+  name: "Poly",
+  email: "poly@hotmail.com",
+});
+phonebook.add({
+  name: "Katy",
+  email: "katy@hotmail.com",
+  category: "friends",
+});
+
+phonebook.list();
+console.log(phonebook.filtered('friends'));
