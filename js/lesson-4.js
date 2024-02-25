@@ -16,15 +16,16 @@
 // знайти в документі заголовок, який має class="completed" і виведи його в консоль;
 // видали елемент li в якому знаходиться заголовок, який має class="completed"
 // після заголовка h1 (перед списком) додай новий елемент p і задай йому наступний текст: "Об'єктна модель документа (Document Object Model)"
-// додай новий елемент списку у кінець списка, його заголовок це - "Властивість innerHTML" а опис (р) - "Ще один спосіб створити DOM-елементи і помістити їх в дерево - це використовувати рядки з тегами і дозволити браузеру зробити всю важку роботу". тобто, потрібно створити елемент LI потім наповнити H3 та P і готову LI закинути у кінець списку
+// додай новий елемент списку у кінець списка, його заголовок це - "Властивість innerHTML" 
+// а опис (р) - "Ще один спосіб створити DOM-елементи і помістити їх в дерево - це використовувати рядки з тегами і дозволити браузеру зробити всю важку роботу". тобто, потрібно створити елемент LI потім наповнити H3 та P і готову LI закинути у кінець списку
 // зроби це саме, але використовуй шаблонні рядки та метод insertAdjacentHTML()
 // очисти список
 
 // const bodyEl = document.querySelector('body');
 // console.log(bodyEl)
-// const titleEl = document.querySelector('#title');
+const titleEl = document.querySelector('#title');
 // console.log(titleEl);
-// const listEl = document.querySelector('.list');
+const listEl = document.querySelector('.list');
 // console.log(listEl);
 // const itemsEl = document.querySelectorAll('[data-topic]');
 // console.log(itemsEl);
@@ -44,3 +45,37 @@
 
 // const topicNav = document.querySelector('[data-topic="navigation"]');
 // console.log(topicNav);
+
+// topicNav.style.backgroundColor = 'blue';
+
+// topicNav.lastElementChild.textContent = 'Я змінив тут текст';
+
+// const pEl = document.createElement('p');
+// pEl.textContent = "Об'єктна модель документа (Document Object Model)";
+
+// titleEl.after(pEl);
+
+// const liEl = document.createElement('li');
+// const h3El = document.createElement('h3');
+// h3El.textContent = "Властивість innerHTML";
+
+// const parEl = document.createElement('p');
+// parEl.textContent = "Ще один спосіб створити DOM-елементи і помістити їх в дерево - це використовувати рядки з тегами і дозволити браузеру зробити всю важку роботу"
+
+// liEl.appendChild(h3El);
+// liEl.appendChild(parEl);
+// console.log(liEl);
+
+// listEl.append(liEl);
+
+// const markup = `
+// <li >
+//         <h3>Властивість innerHTML</h3>
+//         <p>
+//         Ще один спосіб створити DOM-елементи і помістити їх в дерево - це використовувати рядки з тегами і дозволити браузеру зробити всю важку роботу
+//         </p>
+//       </li>
+// `
+// listEl.insertAdjacentHTML('beforeend', markup);
+
+// listEl.innerHTML = "";
