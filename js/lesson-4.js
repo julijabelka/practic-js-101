@@ -147,29 +147,43 @@ const films = [
 //     <p>${title}</p>
 //</li>
 
-const ulEl = document.querySelector('.galary');
-// document.addEventListener('DOMContentLoaded', renderPage);
-const watchedFilms = ['film_2', 'film_4', 'film_5'];
+// const ulEl = document.querySelector('.galary');
+// // document.addEventListener('DOMContentLoaded', renderPage);
+// const watchedFilms = ['film_2', 'film_4', 'film_5'];
 
-function createMarkup(films) {
-    return films.map(film => `
-    <li id="${film.id}">
-     <img src="${film.imgUrl}" alt="${film.title}" />
-     <p>${film.title}</p>
-</li>`
+// function createMarkup(films) {
+//     return films.map(film => `
+//     <li id="${film.id}">
+//      <img src="${film.imgUrl}" alt="${film.title}" />
+//      <p>${film.title}</p>
+// </li>`
 
-    ).join('')
+//     ).join('')
 
+// }
+
+// function renderPage() {
+//     ulEl.innerHTML = createMarkup(films);
+//     watchedFilms.forEach(id => {
+//         const film = ulEl.querySelector(`#${id}`)
+//         if(film) {
+//             film.style.opacity = 0.5
+//         }
+//     })
+// }
+
+// renderPage();
+// const span = document.querySelector('.js-username-output')
+// const input = document.addEventListener("input", handlerInput)
+// function handlerInput(event) {
+//   console.log(event.target.value);
+//   span.textContent = event.target.value.trim() || 'Anonymous'
+// }
+
+const form = document.querySelector('.js-contact-form');
+form.addEventListener('submit', handlerSubmit);
+function handlerSubmit(event) {
+  event.preventDefault();
+  console.log(event.currentTarget.elements.userName.value)
+  
 }
-
-function renderPage() {
-    ulEl.innerHTML = createMarkup(films);
-    watchedFilms.forEach(id => {
-        const film = ulEl.querySelector(`#${id}`)
-        if(film) {
-            film.style.opacity = 0.5
-        }
-    })
-}
-
-renderPage();
