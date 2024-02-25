@@ -26,3 +26,9 @@
 .odd {
   background-color: #ffed3b;
 }
+.galary {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
